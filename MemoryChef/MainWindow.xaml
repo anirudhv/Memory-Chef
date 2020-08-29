@@ -1,0 +1,100 @@
+﻿<Window x:Class="PizzaMaker.Pizza"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PizzaMaker"
+        mc:Ignorable="d"
+        Title="Memory Chef" Height="640" Width="960" Icon="/PizzaMaker;component/bin/Debug/logo.png">
+    <Viewbox StretchDirection="Both" Stretch="Uniform">
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <!-- start -->
+        <Image x:Name ="start" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="960" Source="/PizzaMaker;component/bin/Debug/start.jpg" Margin="-8,0,0,-31" MouseDown="playNow"/>
+        <!-- order -->
+        <Image x:Name ="order" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="960" Source="/PizzaMaker;component/bin/Debug/Order.jpg" Margin="-8,0,0,-31"/>
+        <TextBlock x:Name="memorize" TextAlignment="Center" FontSize="100" Margin="646,0,0,454" RenderTransformOrigin="-0.445,0.69" FontWeight="Bold" />
+        <TextBlock x:Name="pepperoniNum" TextAlignment="Left" FontSize="30" Margin="353,334,336,212" Foreground="Red" FontWeight="ExtraBold" FontFamily="Comic Sans MS" />
+        <TextBlock x:Name="doughType" TextAlignment="Left" FontSize="30" Margin="333,135,361,428" Foreground="Red" FontWeight="ExtraBold" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="cheeseType" TextAlignment="Left" FontSize="30" Margin="360,277,354,275" Foreground="Red" FontWeight="ExtraBold" FontFamily="Comic Sans MS" />
+        <TextBlock x:Name="oliveNum" TextAlignment="Left" FontSize="30" Margin="353,402,361,144" Foreground="Red" FontWeight="ExtraBold" FontFamily="Comic Sans MS" />
+        <TextBlock x:Name="sauceType" TextAlignment="Left" FontSize="30" Margin="342,201,354,355" Foreground="Red" FontWeight="ExtraBold" FontFamily="Comic Sans MS" />
+        <TextBlock x:Name="mushroomNum" TextAlignment="Left" FontSize="30" Margin="353,465,336,83" Foreground="Red" FontWeight="ExtraBold" FontFamily="Comic Sans MS" />
+        <TextBlock x:Name="onionNum" TextAlignment="Left" FontSize="30" Margin="360,526,414,26" Foreground="Red" FontWeight="ExtraBold" FontFamily="Comic Sans MS" />
+        <TextBlock x:Name="msg1" TextAlignment="Center" FontSize="20" Foreground="Black" FontWeight="ExtraBlack" FontFamily="Arial" Margin="0,0,311,570" />
+        <!--countertop for cooking -->
+        <Image x:Name ="countertop" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="960" Source="/PizzaMaker;component/bin/Debug/countertop.jpg" Margin="-8,0,0,-31"/>
+        <!-- dough -->
+        <Image x:Name ="gluten" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="960" Source="/PizzaMaker;component/bin/Debug/gluten.png" Margin="-8,0,0,-31" MouseDown="DoughSelect"/>
+        <Image x:Name ="wheat" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="960" Source="/PizzaMaker;component/bin/Debug/wheat.png" Margin="478,10,-486,-41" MouseDown="DoughSelect"/>
+        <TextBlock x:Name="doughMsg" TextAlignment="Center" Background="White" FontSize="20" Foreground="Black" FontWeight="ExtraBlack" FontFamily="Arial" Margin="0,10,0,570" />
+        <!--sauce -->
+        <Image x:Name ="glutenrolled" HorizontalAlignment="Left" Height="626" VerticalAlignment="Top" Width="890" Source="/PizzaMaker;component/bin/Debug/gluten_rolledout.png" Margin="-8,0,0,-17"/>
+        <Image x:Name ="wheatrolled" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="960" Source="/PizzaMaker;component/bin/Debug/wheat_rolledout.png" Margin="-8,0,0,-31"/>
+        <Image x:Name ="tomatosauce" HorizontalAlignment="Left" Height="282" VerticalAlignment="Top" Width="524" Source="/PizzaMaker;component/bin/Debug/tomatosauce.png" Margin="684,368,-256,-41" MouseDown="SauceSelect" Grid.ColumnSpan="2"/>
+        <Image x:Name ="pestosauce" HorizontalAlignment="Left" Height="276" VerticalAlignment="Top" Width="480" Source="/PizzaMaker;component/bin/Debug/pestosauce.png" Margin="700,-22,-228,0" MouseDown="SauceSelect" Grid.ColumnSpan="2"/>
+        <TextBlock x:Name="sauceMsg" Background="White" TextAlignment="Center" FontSize="20" Foreground="Black" FontWeight="ExtraBlack" FontFamily="Arial" Margin="670,272,0,280" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name ="tomatospread" HorizontalAlignment="Left" Height="644" VerticalAlignment="Top" Width="856" Source="/PizzaMaker;component/bin/Debug/tomatospread.png" Margin="0,-4,0,-31"/>
+        <Image x:Name ="pestospread" HorizontalAlignment="Left" Height="630" VerticalAlignment="Top" Width="834" Source="/PizzaMaker;component/bin/Debug/pestospread.png" Margin="-8,-4,0,-17"/>
+        <!--cheese-->
+        <Image x:Name ="mozz" HorizontalAlignment="Left" Height="532" VerticalAlignment="Top" Width="409" Source="/PizzaMaker;component/bin/Debug/mozerella.png" Margin="543,368,0,-291" MouseDown="cheeseSelect"/>
+        <Image x:Name ="cheddar" HorizontalAlignment="Left" Height="496" VerticalAlignment="Top" Width="362" Source="/PizzaMaker;component/bin/Debug/cheddar.png" Margin="566,-22,0,0" MouseDown="cheeseSelect"/>
+        <TextBlock x:Name="cheeseMsg" Background="White" TextAlignment="Center" FontSize="20" Foreground="Black" FontWeight="ExtraBlack" FontFamily="Arial" Margin="670,272,0,226" RenderTransformOrigin="0.5,0.5"/>
+        <Image x:Name ="mozzspread" HorizontalAlignment="Left" Height="644" VerticalAlignment="Top" Width="856" Source="/PizzaMaker;component/bin/Debug/mozerellaspread.png" Margin="-30,-4,0,-31"/>
+        <Image x:Name ="cheddarspread" HorizontalAlignment="Left" Height="644" VerticalAlignment="Top" Width="856" Source="/PizzaMaker;component/bin/Debug/cheddarspread.png" Margin="-8,-4,0,-31"/>
+        <!-- toppings -->
+        <Image x:Name ="ronibowl" HorizontalAlignment="Left" Height="223" VerticalAlignment="Top" Width="378" Source="/PizzaMaker;component/bin/Debug/pepperonibowl.png" Margin="734,-22,-160,0" MouseDown="topSelect" Grid.ColumnSpan="2"/>
+        <Image x:Name ="olivebowl" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="380" Source="/PizzaMaker;component/bin/Debug/olivebowl.png" Margin="768,160,-196,0" MouseDown="topSelect" Grid.ColumnSpan="2"/>
+        <Image x:Name ="onionbowl" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="380" Source="/PizzaMaker;component/bin/Debug/onionbowl.png" Margin="753,334,-181,0" MouseDown="topSelect" Grid.ColumnSpan="2"/>
+        <Image x:Name ="mushroombowl" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="380" Source="/PizzaMaker;component/bin/Debug/mushroombowl.png" Margin="591,440,-19,-41" MouseDown="topSelect" Grid.ColumnSpan="2"/>
+        <Image x:Name ="olive1" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/olive1.png" Margin="131,128,0,0"/>
+        <Image x:Name ="olive2" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/olive1.png" Margin="333,433,0,0"/>
+        <Image x:Name ="olive3" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/olive1.png" Margin="435,181,0,0"/>
+        <Image x:Name ="olive4" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/olive1.png" Margin="131,334,0,0"/>
+        <Image x:Name ="olive5" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/olive1.png" Margin="239,181,0,0" RenderTransformOrigin="0.777,1.608"/>
+        <Image x:Name ="mushroom1" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/mushroom1.png" Margin="440,314,0,0"/>
+        <Image x:Name ="mushroom2" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/mushroom1.png" Margin="252,254,0,0"/>
+        <Image x:Name ="mushroom3" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/mushroom1.png" Margin="192,422,0,0"/>
+        <Image x:Name ="mushroom4" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/mushroom1.png" Margin="294,113,0,0"/>
+        <Image x:Name ="mushroom5" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/mushroom1.png" Margin="60,221,0,0"/>
+        <Image x:Name ="onion1" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="103" Source="/PizzaMaker;component/bin/Debug/onion1.png" Margin="402,83,0,0"/>
+        <Image x:Name ="onion2" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/onion1.png" Margin="274,495,0,0"/>
+        <Image x:Name ="onion3" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/onion1.png" Margin="163,254,0,0"/>
+        <Image x:Name ="onion4" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/onion1.png" Margin="512,226,0,0"/>
+        <Image x:Name ="onion5" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/onion1.png" Margin="300,347,0,0"/>
+        <Image x:Name ="roni1" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/pepperoni1.png" Margin="434,407,0,0"/>
+        <Image x:Name ="roni2" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/pepperoni1.png" Margin="224,67,0,0"/>
+        <Image x:Name ="roni3" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/pepperoni1.png" Margin="374,226,0,0"/>
+        <Image x:Name ="roni4" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/pepperoni1.png" Margin="73,304,0,0"/>
+        <Image x:Name ="roni5" HorizontalAlignment="Left" Height="88" VerticalAlignment="Top" Width="104" Source="/PizzaMaker;component/bin/Debug/pepperoni1.png" Margin="224,334,0,0"/>
+        <TextBlock x:Name="topMsg" TextAlignment="Center" FontSize="20" Foreground="Black" Background="White" FontWeight="ExtraBlack" FontFamily="Arial" Margin="0,0,188,570" />
+        <TextBlock x:Name="errorMsg" TextAlignment="Center" FontSize="15" Foreground="Red" Background="Black" FontWeight="ExtraBlack" FontFamily="Arial" Margin="-8,564,447,-17" />
+        <Button x:Name="done" Click="cook" Content="DONE" RenderTransformOrigin="4.738,0.738" Margin="802,553,70,6" />
+        <Image x:Name ="baker" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="960" Source="/PizzaMaker;component/bin/Debug/oven.jpg" Margin="-8,0,0,-31"/>
+        <TextBlock x:Name="bakeMsg" TextAlignment="Center" FontSize="20" Foreground="White" Background="Blue" FontWeight="ExtraBlack" FontFamily="Arial" Margin="-8,67,36,503" />
+        <!--grading -->
+        <Image x:Name ="doughcheck" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/check.png" Margin="538,133,0,0"/>
+        <Image x:Name ="saucecheck" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/check.png" Margin="538,191,0,0"/>
+        <Image x:Name ="cheesecheck" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/check.png" Margin="538,244,0,0"/>
+        <Image x:Name ="ronicheck" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/check.png" Margin="538,309,0,0"/>
+        <Image x:Name ="olivecheck" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/check.png" Margin="538,373,0,0"/>
+        <Image x:Name ="mushroomcheck" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/check.png" Margin="538,438,0,0"/>
+        <Image x:Name ="onioncheck" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/check.png" Margin="538,500,0,0"/>
+        <Image x:Name ="doughx" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="55" Source="/PizzaMaker;component/bin/Debug/x.png" Margin="543,142,0,0"/>
+        <Image x:Name ="saucex" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="55" Source="/PizzaMaker;component/bin/Debug/x.png" Margin="543,200,0,0"/>
+        <Image x:Name ="cheesex" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="55" Source="/PizzaMaker;component/bin/Debug/x.png" Margin="543,248,0,0"/>
+        <Image x:Name ="ronix" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="55" Source="/PizzaMaker;component/bin/Debug/x.png" Margin="543,318,0,0"/>
+        <Image x:Name ="olivex" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="55" Source="/PizzaMaker;component/bin/Debug/x.png" Margin="543,382,0,0"/>
+        <Image x:Name ="mushroomx" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="55" Source="/PizzaMaker;component/bin/Debug/x.png" Margin="541,449,0,0"/>
+        <Image x:Name ="onionx" HorizontalAlignment="Left" Height="61" VerticalAlignment="Top" Width="55" Source="/PizzaMaker;component/bin/Debug/x.png" Margin="543,508,0,0"/>
+        <Image x:Name ="star1" HorizontalAlignment="Left" Height="106" VerticalAlignment="Top" Width="88" Source="/PizzaMaker;component/bin/Debug/star.png" Margin="646,20,0,0"/>
+        <Image x:Name ="star2" HorizontalAlignment="Left" Height="86" VerticalAlignment="Top" Width="93" Source="/PizzaMaker;component/bin/Debug/star.png" Margin="853,20,0,0"/>
+            <Image x:Name ="star3" HorizontalAlignment="Left" Height="135" VerticalAlignment="Top" Width="115" Source="/PizzaMaker;component/bin/Debug/star.png" Margin="741,20,0,0"/>
+            <TextBlock x:Name="score" TextAlignment="Center" FontSize="20" Foreground="White" Background ="Red" FontWeight="ExtraBlack" FontFamily="Arial" Margin="0,0,386,570" />
+        <Button x:Name="again" Click="playAgain" Content="Play Again" RenderTransformOrigin="4.738,0.738" Margin="711,526,70,6" />
+    </Grid>
+    </Viewbox>
+</Window>
